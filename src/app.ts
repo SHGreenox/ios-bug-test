@@ -36,6 +36,7 @@ fastify.get('/', (_, reply) => {
     console.log('Stream finished');
   });
 
+  
   reply
     .header('Content-Type', 'application/octet-stream')
     .header('Content-Disposition', 'attachment; filename="test.pdf"')
