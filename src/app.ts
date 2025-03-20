@@ -9,7 +9,6 @@ const fastify = Fastify({
 
 fastify.register(cors, {
   origin: "*",
-  methods: "*"
 })
 
 fastify.get('/', (_, reply) => {
