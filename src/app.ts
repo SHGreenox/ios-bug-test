@@ -44,7 +44,7 @@ fastify.get('/', (_, reply) => {
 
 
   reply
-    .header('Content-Type', 'application/pdf')
+    .header('Content-Type', 'application/octet-stream')
     .header('Content-Disposition', 'attachment; filename="test.pdf"')
     .header('Content-Length', stats.size)
     .send(readStream);
