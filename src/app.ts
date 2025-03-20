@@ -1,9 +1,15 @@
 import Fastify from 'fastify';
 import fs from 'fs'
 import path from 'path';
+import cors from '@fastify/cors'
 
 const fastify = Fastify({
   logger: true
+})
+
+fastify.register(cors, {
+  origin: "*",
+  methods:"*"
 })
 
 fastify.get('/', (_, reply) => {
@@ -36,7 +42,7 @@ fastify.get('/', (_, reply) => {
     console.log('Stream finished');
   });
 
-  
+
   reply
     .header('Content-Type', 'application/octet-stream')
     .header('Content-Disposition', 'attachment; filename="test.pdf"')
